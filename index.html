@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home - My Website</title>
+<link rel="stylesheet" href="resource/css/mystyle.css">
+</head>
+<body>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<script>
+let mybutton = document.getElementById("myBtn");
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script> 
+
+   
+<ul>
+   <li style="float:left"><a class="active" href="index.html">Home</a></li>
+   <li style="float:left"><a class="active" href="about.html">About</a></li>
+   <li style="float:left"><a class="active" 
+href="family.html">Family</a></li>
+   <li style="float:left"><a class="active" href="hobbies.html">Hobbies</a></li>
+   <li style="float:left"><a class="active" href="gallery.html">Gallery</a></li>
+   <li style="float:left"><a class="active" href="playlist.html">Playlist</a></li>
+   <li style="float:left"><a class="active" href="contact.html">Contact</a></li>
+</ul>
+ 
+<header>
+<b><h1 class="glow">^-^ Welcome to My Life ^-^</h1>
+LIFE  ~  LIVE  ~  LOVE  ~  LAUGH! </b>
+</header>
+
+<center>
+<img src="resource/image/myselfbg1.png" alt="first display in homepage" width="330cm" height="450cm" align="right">
+<img src="resource/image/friendbg.png" alt="second display in homepage" width="400cm" height="300cm" align="right">
+<img src="resource/image/friendbg1.png" alt="third display in homepage" width="350cm" height="300cm" align="right">
+<img src="resource/image/myselfbg2.png" alt="fourth display in homepage" width="330cm" height="450cm" align="right">
+
+<img src="resource/image/home2.jpg" alt="third display in homepage" width="100%">
+</center>
+
+
+</body>
+</html>

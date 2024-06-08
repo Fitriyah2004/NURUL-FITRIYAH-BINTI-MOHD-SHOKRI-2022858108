@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist - My Website</title>
+    <link rel="stylesheet" href="resource/css/mystyle.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="family.html">Family</a></li>
+            <li><a href="hobbies.html">Hobbies</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="playlist.html">Playlist</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1 class="glow">PLAYLIST MUSIC</h1>
+    </header>
+
+<!-- MAIN (Center website) -->
+<div class="main">
+
+<h2>kindly choose what types of song you love!</h2>
+
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('Korean')"> Korean</button>
+  <button class="btn" onclick="filterSelection('Japanese')"> Japanese</button>
+  <button class="btn" onclick="filterSelection('English')"> Engllish</button>
+</div>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column English">
+    <div class="content">
+      <img src="resource/image/english1.jpg" alt="now i know" style="width:100%">
+      <h4>Now I know</h4>
+      <p>by Sarah Kang</p>
+    </div>
+  </div>
+  <div class="column English">
+    <div class="content">
+    <img src="resource/image/english2.jpg" alt="old love" style="width:100%">
+      <h4>Old Love</h4>
+      <p>by Yuji & Putri Dahlia</p>
+    </div>
+  </div>
+  <div class="column English">
+    <div class="content">
+    <img src="resource/image/english3.jpg" alt="high school in jakarta" style="width:100%">
+      <h4>High School In Jakarta</h4>
+      <p>by Niki</p>
+    </div>
+  </div>
+  
+
+  <div class="column Japanese">
+    <div class="content">
+      <img src="resource/image/japan1.jpg" alt="shinunoga e-wa" style="width:100%">
+      <h4>Shinunoga E - Wa</h4>
+      <p>by Fujii Kaze</p>
+    </div>
+  </div>
+  <div class="column Japanese">
+    <div class="content">
+    <img src="resource/image/japan2.jpg" alt="Matsuri" style="width:100%">
+      <h4>Matsuri</h4>
+      <p>by Fujii Kaze</p>
+    </div>
+  </div>
+  <div class="column Japanese">
+    <div class="content">
+    <img src="resource/image/japan3.jpg" alt="odoriko" style="width:100%">
+      <h4>Odoriko (踊り子)</h4>
+      <p>by Vaundy</p>
+    </div>
+  </div>
+
+
+  <div class="column Korean">
+    <div class="content">
+      <img src="resource/image/korea1.jpg" alt="Me Gustas Tu" style="width:100%">
+      <h4>Me Gustas Tu</h4>
+      <p>by Gfriend</p>
+    </div>
+  </div>
+  <div class="column Korean">
+    <div class="content">
+    <img src="resource/image/korea2.jpg" alt="Bam Yang Gang" style="width:100%">
+      <h4>Bam Yang Gang</h4>
+      <p>by Bibbi</p>
+    </div>
+  </div>
+  <div class="column Korean">
+    <div class="content">
+    <img src="resource/image/korea3.jpg" alt="Love Wins All" style="width:100%">
+      <h4>Love Wins All</h4>
+      <p>by IU</p>
+    </div>
+  </div>
+<!-- END GRID -->
+</div>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+
+</body>
+</html>
